@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 
+// Make this a functional component 
+// It does not need any state 
 export default class ToDoInput extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
     render() {
+        // Use destructuring whenever possible
+        const { textValue, inputType, inputPlace, changeHandler } = this.props
         return (
             <div>
                 <input
-                    value={this.props.textValue}
-                    type={this.props.inputType}
-                    placeholder={this.props.inputPlace}
-                    onChange={this.props.changeHandler} 
-                    
-                    />
+                    value={textValue}
+                    type={inputType}
+                    placeholder={inputPlace}
+                    onChange={changeHandler}
+
+                />
             </div>
         )
     }
