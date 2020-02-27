@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #282c37;
+  color: #d9e1e8;
+}
+/* 
+
+#282c37
+#9baec8
+#2b90d9
+#d9e1e8
+
+*/
