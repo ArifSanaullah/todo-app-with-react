@@ -1,21 +1,19 @@
-import React, { Component } from 'react'
+import React from "react";
 
-export default class ToDoInput extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    render() {
-        return (
-            <div>
-                <input
-                    value={this.props.textValue}
-                    type={this.props.inputType}
-                    placeholder={this.props.inputPlace}
-                    onChange={this.props.changeHandler} 
-                    
-                    />
-            </div>
-        )
-    }
+export default function ToDoInput({
+  textValue,
+  inputType,
+  inputPlace,
+  changeHandler
+}) {
+  return (
+    <div>
+      <input
+        value={textValue}
+        type={inputType}
+        placeholder={inputPlace}
+        onChange={changeHandler}
+      />
+    </div>
+  );
 }

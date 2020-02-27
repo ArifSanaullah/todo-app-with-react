@@ -25,11 +25,8 @@ export default class TODO extends Component {
 
   addTodo() {
     const { todos, todo } = this.state;
-    todo &&
-      this.setState(() => {
-        todos.push(todo);
-        return { finalTodos: [...this.state.todos], todos: todos, todo: "" };
-      });
+    todo && todos.push(todo);
+    this.setState({ finalTodos: [...todos], todos: todos, todo: "" });
   }
 
   searchTodo(target) {
@@ -39,12 +36,10 @@ export default class TODO extends Component {
     this.setState({ finalTodos: foundTodos, todos: todos });
   }
 
-  deleteTodo(todoKey) {
-    this.setState(() => {
-      const { todos } = this.state;
-      const finalTodos = todos.filter(todo => todo !== todoKey);
-      return { finalTodos: finalTodos, todos: finalTodos };
-    })
+  deleteTodo(todoToDelete) {
+    const { todos } = this.state;
+    const finalTodos = todos.filter(todo => todo !== todoToDelete);
+    this.setState({ finalTodos: finalTodos, todos: finalTodos });
   }
 
   render() {
@@ -52,9 +47,9 @@ export default class TODO extends Component {
       <div className={style.TODO}>
         <div className={style.todoStarter}>
           <q>
-            We will never finish everything on our to-do lists. It's not possible,
-            and that is life :)
-        </q>
+            We will never finish everything on our to-do lists. It's not
+            possible, and that is life :)
+          </q>
 
           <Input
             inputType="search"

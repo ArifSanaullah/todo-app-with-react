@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./Button.module.css";
 
-export default class Button extends Component {
-  render() {
-    return (
-      <button onClick={this.props.clickHandler} className={style.addButton}>
-        {this.props.buttonValue}
-      </button>
-    );
-  }
+export default function Button({ clickHandler, buttonValue }) {
+  return (
+    <button onClick={clickHandler} className={style.addButton}>
+      {buttonValue}
+    </button>
+  );
 }
